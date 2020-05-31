@@ -1,8 +1,17 @@
+from tkinter import * 
 class UtilityBelt:
     def __init__(self,reason):
         self.reason = reason
     def chat_with_me(self):
-        return self
+        gui = Tk()
+        gui.title('Chat with me about anything')
+        Label(gui,text = 'First Name: ').grid(row=0)
+        Label(gui, text = 'Last Name: ').grid(row=1)
+        e1 = Entry(gui)
+        e2 = Entry(gui)
+        e1.grid(row=0,column=1)
+        e2.grid(row=0,column=1)
+        mainloop()
     def calculator(self):
         operation = input('Select an operation ie.(*,+,/,^,%,Avr): ')
         if(operation == '+'):
@@ -53,4 +62,4 @@ class UtilityBelt:
     def curr_time(self):
         return self
 Attempt = UtilityBelt('^')
-Attempt.calculator()
+Attempt.chat_with_me()
