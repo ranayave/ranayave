@@ -1,17 +1,39 @@
 from tkinter import * 
 class UtilityBelt:
-    def __init__(self,reason):
-        self.reason = reason
     def chat_with_me(self):
-        gui = Tk()
-        gui.title('Chat with me about anything')
-        Label(gui,text = 'First Name: ').grid(row=0)
-        Label(gui, text = 'Last Name: ').grid(row=1)
-        e1 = Entry(gui)
-        e2 = Entry(gui)
-        e1.grid(row=0,column=1)
-        e2.grid(row=0,column=1)
-        mainloop()
+        chat = 'continute'
+        while(True):
+            chat = input('How are you feeling today? \n')
+            if(str(chat)=='Exit'):
+                break
+            if('sad'in str(chat)):
+                chat = input('what about your situation is making you sad? \n')
+                chat = input("This to shall pass my friend! Maybe writing about it could help. You're more than welcome to write out your feelings here. Would you like that? \n")
+                if(str(chat)== 'yes'):
+                    chat = input('I am happy to hear that I could provide that for you. You could begin writing about it \n')
+                    print('Thank you for sharing that with me!')
+                    chat = input('Anthing else I could do for you? \n')
+                    if('no' in str(chat)):
+                        print('Thank you')
+                        break
+                    continue
+                if(str(chat)=='Exit'):
+                    break
+            if('happy' in str(chat)):
+                chat = input('I am happy to hear that, how is your day going? \n')
+                if('good' in str(chat) or 'great' in str(chat)):
+                    chat = input('I am happy to hear that! What are your plans? \n')
+                    print('That sounds great!')
+                    continue
+                if('terrible' in str(chat) or 'bad' in str(chat)):
+                    chat = input('I am sorry to hear that. What could make things better? \n')
+                    print('That sounds like fun!')
+                    continue
+            else:
+                chat = input('what else could I do for you? \n')
+                if(str(chat)=='Exit'):
+                    break
+        
     def calculator(self):
         operation = input('Select an operation ie.(*,+,/,^,%,Avr): ')
         if(operation == '+'):
@@ -61,5 +83,5 @@ class UtilityBelt:
             print('Not part of the options')
     def curr_time(self):
         return self
-Attempt = UtilityBelt('^')
+Attempt = UtilityBelt()
 Attempt.chat_with_me()
