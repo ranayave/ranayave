@@ -186,7 +186,7 @@ class Bullet(pygame.sprite.Sprite):
         """ Move the bullet. """
         self.rect.y -= 3
 
-interact = input('Welcome to my utility belt class. You could choose between chat_with_me, calculator \n')
+interact = input('Welcome to my utility belt class. You could choose between chat_with_me, calculator, and game. \n')
 if(str(interact)=='chat_with_me'):
     Attempt = UtilityBelt()
     Attempt.chat_with_me()
